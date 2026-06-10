@@ -24,3 +24,77 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes counterSpin {
+  from {
+    transform: rotate(0deg) translateY(-80px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateY(-80px) rotate(-360deg);
+  }
+}
+
+@layer components {
+  .orbit {
+    animation: orbit 20s linear infinite;
+  }
+  
+  .orbit-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-100px);
+  }
+  
+  .orbit-inner {
+    transform-origin: center center;
+  }
+  
+  /* place the five items evenly (360/5 = 72deg) */
+  .orbit-item:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-100px); }
+  .orbit-item:nth-child(2) { transform: translate(-50%, -50%) rotate(72deg) translateY(-100px); }
+  .orbit-item:nth-child(3) { transform: translate(-50%, -50%) rotate(144deg) translateY(-100px); }
+  .orbit-item:nth-child(4) { transform: translate(-50%, -50%) rotate(216deg) translateY(-100px); }
+  .orbit-item:nth-child(5) { transform: translate(-50%, -50%) rotate(288deg) translateY(-100px); }
+  
+  /* per-child counter-rotation animations */
+  .orbit-item:nth-child(1) .orbit-inner { animation: counter-orbit-1 20s linear infinite; }
+  .orbit-item:nth-child(2) .orbit-inner { animation: counter-orbit-2 20s linear infinite; }
+  .orbit-item:nth-child(3) .orbit-inner { animation: counter-orbit-3 20s linear infinite; }
+  .orbit-item:nth-child(4) .orbit-inner { animation: counter-orbit-4 20s linear infinite; }
+  .orbit-item:nth-child(5) .orbit-inner { animation: counter-orbit-5 20s linear infinite; }
+  
+  /* keyframes for orbiting */
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* counter-orbit keyframes with per-child offsets */
+  @keyframes counter-orbit-1 {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+  }
+
+  @keyframes counter-orbit-2 {
+    from { transform: rotate(-72deg); }
+    to   { transform: rotate(-432deg); }
+  }
+
+  @keyframes counter-orbit-3 {
+    from { transform: rotate(-144deg); }
+    to   { transform: rotate(-504deg); }
+  }
+
+  @keyframes counter-orbit-4 {
+    from { transform: rotate(-216deg); }
+    to   { transform: rotate(-576deg); }
+  }
+
+  @keyframes counter-orbit-5 {
+    from { transform: rotate(-288deg); }
+    to   { transform: rotate(-648deg); }
+  }
+}
+
