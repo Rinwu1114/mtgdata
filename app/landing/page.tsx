@@ -43,6 +43,7 @@ export default function Landing() {
     </div>
   </div>
   <div className="orbit-item">
+    
     <div className="orbit-inner">
       <Image src={RedMana} alt="Red Mana" className="w-14 h-14" />
     </div>
