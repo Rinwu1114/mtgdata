@@ -1,5 +1,7 @@
 import Navbar from "./(mian-app)/components/Navbar";
 import Landing from "./landing/page";
+import Footer from "./(mian-app)/components/Footer";
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center
@@ -7,6 +9,7 @@ export default function Home() {
      ">
       <Navbar />
       <Landing />
+      <Footer />
     </div>
   );
 }

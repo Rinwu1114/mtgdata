@@ -5,6 +5,8 @@ import GreenMana from "../../assets/pngegg (1).png";
 import BlackMana from "../../assets/pngegg (2).png";
 import WhiteMana from "../../assets/pngegg (3).png";
 import RedMana from "../../assets/pngegg (4).png";
+
+
 export default function Landing() {
     return (
         <main className="flex w-full h-full max-w-3xl flex-col justify-center
@@ -21,7 +23,7 @@ export default function Landing() {
         <SearchBar />
          </div> 
        <div className="w-80 h-80 flex justify-center items-center rounded-full relative orbit
-       mx-auto mb-8">
+       mx-auto mb-4">
   <div className="orbit-item">
     <div className="orbit-inner">
       <Image src={BlueMana} alt="Blue Mana" className="w-14 h-14"/>
@@ -53,9 +55,10 @@ export default function Landing() {
         <p className="mt-3 text-xl text-center flex items-center
         justify-center text-gray-600 dark:text-gray-400
         mx-auto max-w-2xl
-        pb-8">
+        mb-8">
           Explore the world of Magic: The Gathering cards and sets.
         </p>
       </main>
+     
     )
 }
