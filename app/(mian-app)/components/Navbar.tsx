@@ -1,6 +1,11 @@
 
+'use client';
+
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
+    const router = useRouter();
+
     return (
         <nav className="w-full bg-gray-900 text-white p-4 backdrop-blur sticky top-0 z-20">
             <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -16,7 +21,10 @@ export default function Navbar() {
                     <button className="px-6 py-2 cursor-pointer bg-purple-800 hover:bg-purple-900 rounded-lg font-medium transition">
                         Login
                     </button>
-                    <button className="px-6 py-2 cursor-pointer hover:text-gray-300 rounded-lg font-medium transition">
+                    <button 
+                        onClick={() => router.push('/sets')}
+                        className="px-6 py-2 cursor-pointer hover:text-gray-300 rounded-lg font-medium transition"
+                    >
                         Sets
                     </button>
                     <button className="px-4 py-2 cursor-pointer hover:text-gray-300 rounded-lg font-medium transition">
