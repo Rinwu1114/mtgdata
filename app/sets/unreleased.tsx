@@ -1,6 +1,7 @@
 interface Set {
   id: string;
   code: string;
+  icon_svg_uri: string;
   name: string;
   released_at: string;
   set_type: string;
@@ -21,6 +22,7 @@ function SetBlock({ set }: { set: Set }) {
 }
 
 export function UnreleasedSets({ setGroups }: { setGroups: Set[][] }) {
+  
   return (
     <>
       {setGroups.length > 0 && (
@@ -57,7 +59,7 @@ export function UnreleasedSets({ setGroups }: { setGroups: Set[][] }) {
       {setGroups.length > 0 && (
         <div className="flex items-center gap-4">
           <div className="flex-1 h-px bg-gray-700"></div>
-          <span className="text-gray-500 font-semibold">Upcoming</span>
+          <span className="text-gray-500 font-semibold">Released</span>
           <div className="flex-1 h-px bg-gray-700"></div>
         </div>
       )}
