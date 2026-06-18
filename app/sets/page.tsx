@@ -7,6 +7,7 @@ interface Set {
   name: string;
   released_at: string;
   set_type: string;
+  card_count: number;
   parent_set_code?: string;
   set_parent?: string | null;
 }
@@ -41,11 +42,13 @@ function groupSetsByParent(setList: Set[]) {
   console.log('Set parent grouping:', grouped.length, 'groups created');
   return grouped;
 }
+
+export default async function Sets() {
   const defaultHeaders = {
     "User-Agent": `Mtg-Database/1.0 (Contact: rinwu1114@gmail.com)`,
     Accept: `application/json`,
   };
-export default async function Sets() {
+  
   let releasedGroups: Set[][] = [];
   let unreleasedGroups: Set[][] = [];
   let error: string | null = null;
@@ -111,14 +114,13 @@ export default async function Sets() {
     console.log('Unreleased set groups:', unreleasedGroups.length);
   } catch (err) {
     error = err instanceof Error ? err.message : 'Unknown error occurred';
-    console.error('❌ Sets page error:', error, err);
   }
 
   if (error) {
     return (
       <main className="min-h-screen bg-gray-950 text-white p-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Magic: The Gathering Sets</h1>
+          <h1 className="text-4xl font-bold mb-8">MTG Sets</h1>
           
           <div className="bg-red-900 border border-red-600 rounded-lg p-6">
             <h2 className="text-xl font-bold text-red-200 mb-3">Error Loading Sets</h2>
