@@ -3,6 +3,7 @@ import { UnreleasedSets } from './unreleased';
 
 interface Set {
   id: string;
+  icon_svg_uri: string
   code: string;
   name: string;
   released_at: string;
