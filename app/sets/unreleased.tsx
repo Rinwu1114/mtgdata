@@ -25,7 +25,7 @@ export function UnreleasedSets({ setGroups }: { setGroups: Set[][] }) {
     <>
       {setGroups.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold text-amber-400 mb-4">Upcoming Sets</h2>
+          <h2 className="text-2xl font-bold text-amber-400 mb-4">Upcoming Sets: {setGroups.length}</h2>
           <div className="grid gap-4">
             {setGroups.map((setGroup) => (
               <div

@@ -23,7 +23,7 @@ function SetBlock({ set }: { set: Set }) {
 export function ReleasedSets({ setGroups }: { setGroups: Set[][] }) {
   return (
     <section>
-      <h2 className="text-2xl font-bold text-purple-400 mb-4">Released Sets</h2>
+      <h2 className="text-2xl font-bold text-purple-400 mb-4">Released Sets ({setGroups.length})</h2>
       <div className="grid gap-4">
         {setGroups.length > 0 ? (
           setGroups.map((setGroup) => (
